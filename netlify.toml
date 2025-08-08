@@ -1,0 +1,35 @@
+[build]
+  # Comando de build
+  command = "npm run build"
+  
+  # Directorio donde se encuentran los archivos construidos
+  publish = "dist"
+  
+  # Directorio base (en caso de que el proyecto esté en una subcarpeta)
+  base = "."
+
+[build.environment]
+  # Variables de entorno para el build
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+# Redirecciones para SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers para archivos estáticos (caché)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
