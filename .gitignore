@@ -137,3 +137,7 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+documentation/Documentación Funcional.md
+documentation/Documentación Técnica.md
+documentation/Negocio.md
+documentation/plan-tareas-frontend.md
