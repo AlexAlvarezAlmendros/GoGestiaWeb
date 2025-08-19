@@ -11,11 +11,11 @@ const PrivacyPolicy = () => {
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">1. Información sobre el responsable del tratamiento</h2>
           <p>
-            <strong>GoGenAI</strong> (en adelante, "nosotros", "nuestro" o la "Empresa") es el responsable del tratamiento de los datos personales que nos facilite a través de este sitio web.
+            <strong>GoGestia</strong> (en adelante, "nosotros", "nuestro" o la "Empresa") es el responsable del tratamiento de los datos personales que nos facilite a través de este sitio web.
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li><strong>Denominación social:</strong> GoGenAI</li>
-            <li><strong>Email de contacto:</strong> contacto@gogenaiweb.com</li>
+            <li><strong>Denominación social:</strong> GoGestia</li>
+            <li><strong>Email de contacto:</strong> contacto@gogestia.com</li>
             <li><strong>Teléfono:</strong> +34 900 000 000</li>
           </ul>
         </section>
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
             <li><strong>Retirada del consentimiento:</strong> En cualquier momento, sin efectos retroactivos</li>
           </ul>
           <p className="mt-4">
-            Para ejercer estos derechos, puede contactarnos en: <strong>contacto@gogenaiweb.com</strong>
+            Para ejercer estos derechos, puede contactarnos en: <strong>contacto@gogestia.com</strong>
           </p>
         </section>
 
@@ -104,7 +104,7 @@ const PrivacyPolicy = () => {
             Si tiene cualquier duda sobre esta Política de Privacidad, puede contactarnos:
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li><strong>Email:</strong> contacto@gogenaiweb.com</li>
+            <li><strong>Email:</strong> contacto@gogestia.com</li>
             <li><strong>Teléfono:</strong> +34 900 000 000</li>
           </ul>
         </section>

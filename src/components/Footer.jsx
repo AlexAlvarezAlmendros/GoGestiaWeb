@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/gogestia" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-brand-lime transition-colors"
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Enlaces rápidos */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-brand-lime transition-colors">
@@ -65,7 +65,7 @@ const Footer = () => {
 
           {/* Contacto */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <a href="mailto:contacto@gogestia.com" className="hover:text-brand-lime transition-colors">
@@ -73,8 +73,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="tel:+34679248683" className="hover:text-brand-lime transition-colors">
-                  +34 679 248 683
+                <a href="tel:+34900000000" className="hover:text-brand-lime transition-colors">
+                  +34 900 000 000
                 </a>
               </li>
             </ul>
