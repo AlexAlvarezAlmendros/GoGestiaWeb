@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
 
@@ -39,7 +40,7 @@ const Home = () => {
     {
       type: 'Consultoras',
       problems: 'Muchos Excel, informes, tareas repetitivas',
-      solution: 'Power BI + IA + flujos automatizados'
+      solution: 'Dashboards + IA + flujos automatizados'
     },
     {
       type: 'Inmobiliarias',
@@ -89,7 +90,7 @@ const Home = () => {
             <Button to="/contacto" size="lg" className="text-lg">
               Solicita tu diagnóstico gratuito
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-dark-green">
+            <Button to="/servicios" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-dark-green">
               Ver servicios
             </Button>
           </div>
@@ -134,38 +135,6 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Casos comunes por sector</h2>
-            <p className="text-xl text-gray-600">
-              Cada empresa tiene necesidades únicas. Aquí algunos ejemplos de cómo ayudamos
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {companyTypes.map((company, index) => (
-              <Card key={index} className="border-l-4 border-brand-lime">
-                <Card.Header>
-                  <Card.Title>{company.type}</Card.Title>
-                </Card.Header>
-                <Card.Content>
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-red-600 mb-2">Problemas comunes:</h4>
-                    <p className="text-gray-600">{company.problems}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-green-600 mb-2">Nuestra solución:</h4>
-                    <p className="text-gray-600">{company.solution}</p>
-                  </div>
-                </Card.Content>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cómo funciona */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Cómo funciona?</h2>
             <p className="text-xl text-gray-600">
               Nuestro proceso paso a paso para transformar tu empresa
@@ -194,6 +163,38 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Cómo funciona */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Casos comunes por sector</h2>
+            <p className="text-xl text-gray-600">
+              Cada empresa tiene necesidades únicas. Aquí algunos ejemplos de cómo ayudamos
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {companyTypes.map((company, index) => (
+              <Card key={index} className="border-l-4 border-brand-lime">
+                <Card.Header>
+                  <Card.Title>{company.type}</Card.Title>
+                </Card.Header>
+                <Card.Content>
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-red-600 mb-2">Problemas comunes:</h4>
+                    <p className="text-gray-600">{company.problems}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-600 mb-2">Nuestra solución:</h4>
+                    <p className="text-gray-600">{company.solution}</p>
+                  </div>
+                </Card.Content>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Resultados estimados */}
       <section className="py-16 bg-brand-dark-green text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,17 +208,17 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">60%</div>
-              <h3 className="text-xl font-semibold mb-2">Ahorro de tiempo</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Ahorro de tiempo</h3>
               <p className="text-gray-200">Automatización de tareas repetitivas</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">90%</div>
-              <h3 className="text-xl font-semibold mb-2">Reducción de errores</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Reducción de errores</h3>
               <p className="text-gray-200">Procesos digitalizados y validados</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">3x</div>
-              <h3 className="text-xl font-semibold mb-2">Mayor productividad</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Mayor productividad</h3>
               <p className="text-gray-200">Equipos más eficientes y organizados</p>
             </div>
           </div>

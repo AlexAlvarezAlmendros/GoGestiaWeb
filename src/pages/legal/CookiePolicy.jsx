@@ -136,7 +136,7 @@ const CookiePolicy = () => {
             Si tiene alguna pregunta sobre nuestra Política de Cookies, puede contactarnos:
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li><strong>Email:</strong> contacto@gogenaiweb.com</li>
+            <li><strong>Email:</strong> contacto@gogestia.com</li>
             <li><strong>Teléfono:</strong> +34 900 000 000</li>
           </ul>
         </section>

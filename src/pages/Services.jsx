@@ -85,7 +85,7 @@ const Services = () => {
     }
   ]
 
-  const futureServices = [
+  /*const futureServices = [
     {
       icon: '🏢',
       title: 'ERP a medida',
@@ -104,7 +104,7 @@ const Services = () => {
       description: 'Análisis avanzado y predicciones para tu negocio',
       status: 'Q2 2024'
     }
-  ]
+  ]*/
 
   const openModal = (service) => {
     setSelectedService(service)
@@ -160,7 +160,7 @@ const Services = () => {
                 </Card.Content>
                 <Card.Footer>
                   <Button variant="outline" size="sm" className="w-full">
-                    Ver detalles completos
+                    Ver beneficios para tu empresa
                   </Button>
                 </Card.Footer>
               </Card>
@@ -168,7 +168,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Servicios futuros */}
+        {/* Servicios futuros 
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Próximos Servicios</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -189,11 +189,11 @@ const Services = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div>*/}
 
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-brand-dark-green to-green-800 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             ¿No estás seguro de qué necesitas?
           </h2>
           <p className="text-xl mb-8 text-gray-100">

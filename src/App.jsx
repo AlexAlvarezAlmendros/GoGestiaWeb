@@ -9,11 +9,13 @@ import PrivacyPolicy from './pages/legal/PrivacyPolicy'
 import LegalNotice from './pages/legal/LegalNotice'
 import CookiePolicy from './pages/legal/CookiePolicy'
 import LoadingProvider from './hooks/LoadingProvider'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <LoadingProvider>
       <Router>
+        <ScrollToTop />
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />

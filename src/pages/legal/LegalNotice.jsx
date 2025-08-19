@@ -14,18 +14,17 @@ const LegalNotice = () => {
             En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se informa al usuario de los datos identificativos del prestador de servicios:
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li><strong>Denominación social:</strong> GoGenAI</li>
-            <li><strong>Dirección:</strong> [Dirección completa]</li>
-            <li><strong>Email:</strong> contacto@gogenaiweb.com</li>
+            <li><strong>Denominación social:</strong> GoGestia</li>
+            <li><strong>Email:</strong> contacto@gogestia.com</li>
             <li><strong>Teléfono:</strong> +34 900 000 000</li>
-            <li><strong>Sitio web:</strong> www.gogenaiweb.com</li>
+            <li><strong>Sitio web:</strong> www.gogestia.com</li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">2. Objeto</h2>
           <p>
-            El presente Aviso Legal tiene por objeto regular el uso del sitio web www.gogenaiweb.com (en adelante, "el Sitio Web"), propiedad de GoGenAI.
+            El presente Aviso Legal tiene por objeto regular el uso del sitio web www.gogestia.com (en adelante, "el Sitio Web"), propiedad de GoGestia.
           </p>
           <p className="mt-2">
             El acceso al Sitio Web es gratuito, salvo en lo relativo al coste de la conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso contratado por el usuario.
@@ -47,7 +46,7 @@ const LegalNotice = () => {
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">4. Contenidos</h2>
           <p>
-            GoGenAI se reserva el derecho a realizar, en cualquier momento y sin previo aviso, modificaciones y actualizaciones de la información contenida en el Sitio Web, de la configuración y presentación de ésta y de las condiciones de acceso.
+            GoGestia se reserva el derecho a realizar, en cualquier momento y sin previo aviso, modificaciones y actualizaciones de la información contenida en el Sitio Web, de la configuración y presentación de ésta y de las condiciones de acceso.
           </p>
           <p className="mt-2">
             Los contenidos del Sitio Web tienen carácter meramente informativo y no constituyen asesoramiento profesional de ningún tipo.
@@ -57,7 +56,7 @@ const LegalNotice = () => {
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">5. Responsabilidad</h2>
           <p>
-            GoGenAI no se hace responsable de los daños y perjuicios de cualquier naturaleza que puedan deberse a:
+            GoGestia no se hace responsable de los daños y perjuicios de cualquier naturaleza que puedan deberse a:
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li>La falta de disponibilidad o continuidad del funcionamiento del Sitio Web</li>
@@ -71,24 +70,24 @@ const LegalNotice = () => {
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">6. Propiedad intelectual e industrial</h2>
           <p>
-            Todos los contenidos del Sitio Web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a GoGenAI.
+            Todos los contenidos del Sitio Web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a GoGestia.
           </p>
           <p className="mt-2">
-            Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de este Sitio Web, sin la autorización expresa de GoGenAI.
+            Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de este Sitio Web, sin la autorización expresa de GoGestia.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">7. Enlaces</h2>
           <p>
-            El Sitio Web puede contener enlaces a otros sitios web de terceros. GoGenAI no se hace responsable del contenido de dichos sitios web ni de las condiciones de uso de los mismos.
+            El Sitio Web puede contener enlaces a otros sitios web de terceros. GoGestia no se hace responsable del contenido de dichos sitios web ni de las condiciones de uso de los mismos.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">8. Protección de datos</h2>
           <p>
-            Para el tratamiento de datos personales, GoGenAI se acoge a lo establecido en el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.
+            Para el tratamiento de datos personales, GoGestia se acoge a lo establecido en el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.
           </p>
           <p className="mt-2">
             Para más información, consulte nuestra <a href="/legal/privacidad" className="text-brand-dark-green underline">Política de Privacidad</a>.
@@ -105,7 +104,7 @@ const LegalNotice = () => {
         <section>
           <h2 className="text-2xl font-bold text-brand-dark-green mb-4">10. Modificaciones</h2>
           <p>
-            GoGenAI se reserva el derecho de realizar modificaciones en el presente Aviso Legal cuando lo estime oportuno, siendo válidas dichas modificaciones desde el momento de su publicación en el Sitio Web.
+            GoGestia se reserva el derecho de realizar modificaciones en el presente Aviso Legal cuando lo estime oportuno, siendo válidas dichas modificaciones desde el momento de su publicación en el Sitio Web.
           </p>
         </section>
 
@@ -115,7 +114,7 @@ const LegalNotice = () => {
             Para cualquier consulta sobre el presente Aviso Legal, puede contactar con nosotros:
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li><strong>Email:</strong> contacto@gogenaiweb.com</li>
+            <li><strong>Email:</strong> contacto@gogestia.com</li>
             <li><strong>Teléfono:</strong> +34 900 000 000</li>
           </ul>
         </section>

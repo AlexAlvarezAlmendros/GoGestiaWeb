@@ -21,10 +21,13 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <div className="w-10 h-10 bg-brand-dark-green rounded-lg flex items-center justify-center mr-2">
-                <span className="text-white font-bold text-xl">G</span>
-              </div>
-              <span className="text-brand-dark-green font-bold text-xl">GoGenAI</span>
+              <img 
+                src="/GoGestiaLogo.svg" 
+                alt="GoGestia Logo" 
+                className="w-10 h-10 filter brightness-0 invert"
+                style={{filter: 'invert(15%) sepia(73%) saturate(1825%) hue-rotate(93deg) brightness(95%) contrast(89%)'}}
+              />
+              <span className="text-brand-dark-green font-bold text-xl">GoGestia</span>
             </Link>
           </div>
 
