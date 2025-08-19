@@ -207,17 +207,17 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">60%</div>
-              <h3 className="text-xl font-semibold mb-2">Ahorro de tiempo</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Ahorro de tiempo</h3>
               <p className="text-gray-200">Automatización de tareas repetitivas</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">90%</div>
-              <h3 className="text-xl font-semibold mb-2">Reducción de errores</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Reducción de errores</h3>
               <p className="text-gray-200">Procesos digitalizados y validados</p>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-brand-lime mb-2">3x</div>
-              <h3 className="text-xl font-semibold mb-2">Mayor productividad</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Mayor productividad</h3>
               <p className="text-gray-200">Equipos más eficientes y organizados</p>
             </div>
           </div>

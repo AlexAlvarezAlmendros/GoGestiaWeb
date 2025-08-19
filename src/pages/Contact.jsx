@@ -244,7 +244,7 @@ const Contact = () => {
           {/* Información adicional */}
           <div className="space-y-6">
             <div className="bg-brand-dark-green text-white p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-4">¿Qué incluye el diagnóstico?</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">¿Qué incluye el diagnóstico?</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start">
                   <span className="text-brand-lime mr-2">✓</span>

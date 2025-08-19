@@ -10,14 +10,16 @@ const Footer = () => {
           {/* Logo y descripción */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-brand-lime rounded-lg flex items-center justify-center mr-2">
-                <span className="text-brand-dark-green font-bold text-xl">G</span>
-              </div>
-              <span className="text-white font-bold text-xl">GoGenAI</span>
+               <img 
+                src="/GoGestiaLogo.svg" 
+                alt="GoGestia Logo" 
+                className="w-10 h-10 filter brightness-0 invert"
+              />
+              <span className="text-white font-bold text-xl">GoGestia</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Detectamos ineficiencias en tus procesos y te proponemos soluciones personalizadas 
-              que aumentan tu rentabilidad y productividad, sin compromiso.
+              que aumentan tu rentabilidad y productividad.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -66,13 +68,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <a href="mailto:contacto@gogenaiweb.com" className="hover:text-brand-lime transition-colors">
-                  contacto@gogenaiweb.com
+                <a href="mailto:contacto@gogestia.com" className="hover:text-brand-lime transition-colors">
+                  contacto@gogestia.com
                 </a>
               </li>
               <li>
-                <a href="tel:+34900000000" className="hover:text-brand-lime transition-colors">
-                  +34 900 000 000
+                <a href="tel:+34679248683" className="hover:text-brand-lime transition-colors">
+                  +34 679 248 683
                 </a>
               </li>
             </ul>
@@ -83,7 +85,7 @@ const Footer = () => {
         <div className="border-t border-gray-600 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} GoGenAI. Todos los derechos reservados.
+              © {currentYear} GoGestia. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/legal/aviso-legal" className="text-gray-400 hover:text-brand-lime text-sm transition-colors">
