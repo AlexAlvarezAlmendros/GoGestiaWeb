@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Input from './Input'
 import Button from './Button'
+import contactConfig from '../config/contact'
 
 /**
  * Componente de formulario de contacto reutilizable
@@ -132,7 +133,7 @@ const ContactForm = ({
           <label htmlFor="acceptPrivacy" className="ml-3 text-sm text-gray-600">
             He leído y acepto la{' '}
             <a 
-              href="/legal/privacidad" 
+              href={contactConfig.legal.privacy}
               className="text-brand-dark-green hover:underline"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +142,7 @@ const ContactForm = ({
             </a>
             {' '}y el{' '}
             <a 
-              href="/legal/aviso-legal" 
+              href={contactConfig.legal.terms}
               className="text-brand-dark-green hover:underline"
               target="_blank"
               rel="noopener noreferrer"

@@ -1,4 +1,5 @@
 import React from 'react'
+import contactConfig from '../config/contact'
 
 /**
  * Componente que muestra la información adicional del formulario de contacto
@@ -23,7 +24,7 @@ const ContactInfo = () => {
           </li>
           <li className="flex items-start">
             <span className="text-brand-lime mr-2 mt-0.5 flex-shrink-0">✓</span>
-            <span>Informe personalizado en 7 días</span>
+            <span>Informe personalizado en {contactConfig.responseTime.diagnosis}</span>
           </li>
           <li className="flex items-start">
             <span className="text-brand-lime mr-2 mt-0.5 flex-shrink-0">✓</span>
@@ -42,26 +43,26 @@ const ContactInfo = () => {
             <strong className="text-brand-dark-green">Email:</strong>
             <br />
             <a 
-              href="mailto:contacto@gogestia.com" 
+              href={`mailto:${contactConfig.email}`}
               className="text-brand-dark-green hover:underline transition-colors duration-200"
             >
-              contacto@gogestia.com
+              {contactConfig.email}
             </a>
           </div>
           <div>
             <strong className="text-brand-dark-green">Teléfono:</strong>
             <br />
             <a 
-              href="tel:+34656852437" 
+              href={`tel:${contactConfig.phone}`}
               className="text-brand-dark-green hover:underline transition-colors duration-200"
             >
-              +34 656 852 437
+              {contactConfig.phoneDisplay}
             </a>
           </div>
           <div>
             <strong className="text-brand-dark-green">Horario de atención:</strong>
             <br />
-            <span className="text-gray-600">Lunes a Viernes: 9:00 - 18:00h</span>
+            <span className="text-gray-600">{contactConfig.businessHours.weekdays}</span>
           </div>
         </div>
       </div>
@@ -72,7 +73,7 @@ const ContactInfo = () => {
           Respuesta rápida
         </h3>
         <p className="text-sm text-brand-dark-green">
-          Nos comprometemos a contactarte en un plazo máximo de 24 horas tras recibir tu solicitud.
+          Nos comprometemos a contactarte en un plazo máximo de {contactConfig.responseTime.contact} tras recibir tu solicitud.
         </p>
       </div>
     </div>

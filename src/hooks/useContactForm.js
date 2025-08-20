@@ -118,8 +118,16 @@ export const useContactForm = () => {
     } catch (error) {
       console.error('Error al enviar formulario:', error)
       
-      // Mostrar error específico o genérico
-      const errorMessage = error.message || 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.'
+      // Determinar el mensaje de error apropiado
+      let errorMessage = 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.'
+      
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        // Error de conexión
+        errorMessage = 'No se pudo conectar con el servidor. Por favor, verifica tu conexión a internet e inténtalo de nuevo.'
+      } else if (error.message) {
+        // Error específico del servidor
+        errorMessage = error.message
+      }
       
       setErrors({
         submit: errorMessage

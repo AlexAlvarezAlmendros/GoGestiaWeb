@@ -5,6 +5,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Thanks from './pages/Thanks'
 import Blog from './pages/Blog'
+import NotFound from './pages/NotFound'
 import PrivacyPolicy from './pages/legal/PrivacyPolicy'
 import LegalNotice from './pages/legal/LegalNotice'
 import CookiePolicy from './pages/legal/CookiePolicy'
@@ -26,6 +27,8 @@ function App() {
             <Route path="/legal/privacidad" element={<PrivacyPolicy />} />
             <Route path="/legal/aviso-legal" element={<LegalNotice />} />
             <Route path="/legal/cookies" element={<CookiePolicy />} />
+            {/* Ruta catch-all para manejar 404s */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
       </Router>

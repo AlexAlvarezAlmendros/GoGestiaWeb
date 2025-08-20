@@ -33,15 +33,16 @@ class ContactService {
     } catch (error) {
       console.error('Error en ContactService.submitContact:', error)
       
-      // Si no hay conexión con el servidor, simular envío exitoso para desarrollo
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        console.warn('No se pudo conectar con el servidor. Simulando envío exitoso para desarrollo.')
+      // Solo simular envío exitoso en desarrollo, no en producción
+      if (import.meta.env.DEV && error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.warn('Modo desarrollo: No se pudo conectar con el servidor. Simulando envío exitoso.')
         return { 
           success: true, 
           message: 'Formulario enviado correctamente (modo desarrollo)' 
         }
       }
       
+      // En producción, siempre lanzar el error real
       throw error
     }
   }
@@ -69,15 +70,16 @@ class ContactService {
     } catch (error) {
       console.error('Error en ContactService.subscribeNewsletter:', error)
       
-      // Simular suscripción exitosa si no hay servidor
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        console.warn('No se pudo conectar con el servidor. Simulando suscripción exitosa para desarrollo.')
+      // Solo simular suscripción exitosa en desarrollo, no en producción
+      if (import.meta.env.DEV && error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.warn('Modo desarrollo: No se pudo conectar con el servidor. Simulando suscripción exitosa.')
         return { 
           success: true, 
           message: 'Suscripción exitosa (modo desarrollo)' 
         }
       }
       
+      // En producción, siempre lanzar el error real
       throw error
     }
   }
