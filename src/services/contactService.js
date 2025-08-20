@@ -18,6 +18,7 @@ class ContactService {
           company: formData.company,
           position: formData.position || '',
           message: formData.message,
+          acceptPrivacy: formData.acceptPrivacy,
           timestamp: new Date().toISOString(),
           source: 'website'
         }),
@@ -105,6 +106,10 @@ class ContactService {
       errors.message = 'El mensaje debe tener al menos 10 caracteres'
     }
 
+    if (!formData.acceptPrivacy) {
+      errors.acceptPrivacy = 'Debe aceptar la política de privacidad para continuar'
+    }
+
     return {
       isValid: Object.keys(errors).length === 0,
       errors
@@ -118,7 +123,7 @@ class ContactService {
 
   validatePhone(phone) {
     // Validación básica para números de teléfono españoles e internacionales
-    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{9,15}$/
+    const phoneRegex = /^[+]?[0-9\s-()]{9,15}$/
     return phoneRegex.test(phone.replace(/\s/g, ''))
   }
 }
