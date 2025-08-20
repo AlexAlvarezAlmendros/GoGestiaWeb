@@ -137,7 +137,7 @@ const CookiePolicy = () => {
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li><strong>Email:</strong> contacto@gogestia.com</li>
-            <li><strong>Teléfono:</strong> +34 900 000 000</li>
+            <li><strong>Teléfono:</strong> +34 656 852 437</li>
           </ul>
         </section>
       </div>

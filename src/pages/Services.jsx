@@ -204,13 +204,6 @@ const Services = () => {
             <Button to="/contacto" size="lg">
               Diagnóstico Gratuito
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-white text-white hover:bg-white hover:text-brand-dark-green"
-            >
-              Hablar con un experto
-            </Button>
           </div>
         </div>
       </div>

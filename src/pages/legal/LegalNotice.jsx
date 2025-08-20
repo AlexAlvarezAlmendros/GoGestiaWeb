@@ -16,7 +16,7 @@ const LegalNotice = () => {
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li><strong>Denominación social:</strong> GoGestia</li>
             <li><strong>Email:</strong> contacto@gogestia.com</li>
-            <li><strong>Teléfono:</strong> +34 900 000 000</li>
+            <li><strong>Teléfono:</strong> +34 656 852 437</li>
             <li><strong>Sitio web:</strong> www.gogestia.com</li>
           </ul>
         </section>
@@ -115,7 +115,7 @@ const LegalNotice = () => {
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li><strong>Email:</strong> contacto@gogestia.com</li>
-            <li><strong>Teléfono:</strong> +34 900 000 000</li>
+            <li><strong>Teléfono:</strong> +34 656 852 437</li>
           </ul>
         </section>
       </div>

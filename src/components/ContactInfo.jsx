@@ -42,20 +42,20 @@ const ContactInfo = () => {
             <strong className="text-brand-dark-green">Email:</strong>
             <br />
             <a 
-              href="mailto:contacto@gogenaiweb.com" 
+              href="mailto:contacto@gogestia.com" 
               className="text-brand-dark-green hover:underline transition-colors duration-200"
             >
-              contacto@gogenaiweb.com
+              contacto@gogestia.com
             </a>
           </div>
           <div>
             <strong className="text-brand-dark-green">Teléfono:</strong>
             <br />
             <a 
-              href="tel:+34900000000" 
+              href="tel:+34656852437" 
               className="text-brand-dark-green hover:underline transition-colors duration-200"
             >
-              +34 900 000 000
+              +34 656 852 437
             </a>
           </div>
           <div>
