@@ -3,12 +3,16 @@ import ContactHeader from '../components/ContactHeader'
 import ContactForm from '../components/ContactForm'
 import ContactInfo from '../components/ContactInfo'
 import useContactForm from '../hooks/useContactForm'
+import { useSEO } from '../hooks/useSEO'
 
 /**
  * Página de contacto principal
  * Utiliza componentes separados para una mejor organización y reutilización
  */
 const Contact = () => {
+  // Configurar SEO para la página de contacto
+  useSEO('contact')
+  
   const {
     formData,
     errors,

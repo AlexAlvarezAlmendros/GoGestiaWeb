@@ -2,8 +2,12 @@ import { useState } from 'react'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
+import { useSEO } from '../hooks/useSEO'
 
 const Services = () => {
+  // Configurar SEO para la página de servicios
+  useSEO('services')
+  
   const [selectedService, setSelectedService] = useState(null)
 
   const currentServices = [
