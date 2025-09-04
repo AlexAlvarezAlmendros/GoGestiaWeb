@@ -5,6 +5,8 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Thanks from './pages/Thanks'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
+import CreateBlogPost from './pages/CreateBlogPost'
 import NotFound from './pages/NotFound'
 import PrivacyPolicy from './pages/legal/PrivacyPolicy'
 import LegalNotice from './pages/legal/LegalNotice'
@@ -24,6 +26,8 @@ function App() {
             <Route path="/contacto" element={<Contact />} />
             <Route path="/gracias" element={<Thanks />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/crear" element={<CreateBlogPost />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/legal/privacidad" element={<PrivacyPolicy />} />
             <Route path="/legal/aviso-legal" element={<LegalNotice />} />
             <Route path="/legal/cookies" element={<CookiePolicy />} />
