@@ -3,6 +3,21 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 // Map para rastrear requests activos y prevenir duplicados
 const activeRequests = new Map()
 
+// Función para obtener headers de autenticación
+const getAuthHeaders = () => {
+  // Buscar el token en el contexto global si está disponible
+  if (typeof window !== 'undefined' && window.__authToken) {
+    return {
+      'Authorization': `Bearer ${window.__authToken}`,
+      'Content-Type': 'application/json'
+    }
+  }
+  
+  return {
+    'Content-Type': 'application/json'
+  }
+}
+
 // Función para generar hash simple del contenido
 const generateContentHash = (data) => {
   const str = JSON.stringify(data)
@@ -249,10 +264,15 @@ class BlogService {
       console.log(`[${requestId}] Datos formateados:`, formattedData)
       console.log(`[${requestId}] Enviando POST request a: ${API_BASE_URL}/api/blog/posts`)
 
+      // Obtener headers de autenticación
+      const authHeaders = getAuthHeaders()
+      console.log(`[${requestId}] Headers de autenticación obtenidos`)
+
       const response = await fetch(`${API_BASE_URL}/api/blog/posts`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          ...authHeaders
         },
         body: JSON.stringify(formattedData)
       })
@@ -290,10 +310,14 @@ class BlogService {
    */
   async saveDraft(postData) {
     try {
+      // Obtener headers de autenticación
+      const authHeaders = getAuthHeaders()
+      
       const response = await fetch(`${API_BASE_URL}/api/blog/drafts`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          ...authHeaders
         },
         body: JSON.stringify(postData)
       })

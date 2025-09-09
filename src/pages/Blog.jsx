@@ -6,6 +6,7 @@ import useBlogPosts from '../hooks/useBlogPosts'
 import useBlogCategories from '../hooks/useBlogCategories'
 import useNewsletter from '../hooks/useNewsletter'
 import useUrlFilters from '../hooks/useUrlFilters'
+import { useAuth } from '../hooks/useAuth'
 import { formatDate, formatReadTime } from '../utils/blogUtils'
 
 const Blog = () => {
@@ -86,40 +87,48 @@ const Blog = () => {
 }
 
 // Componentes separados para mejor organización
-const BlogHeader = () => (
-  <div className="text-center mb-16">
-    <div className="flex justify-between items-start mb-6">
-      <div className="flex-1"></div>
-      <div className="flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Blog y Recursos</h1>
+const BlogHeader = () => {
+  const { isAuthenticated } = useAuth()
+  
+  return (
+    <div className="text-center mb-16">
+      <div className="flex justify-between items-start mb-6">
+        <div className="flex-1"></div>
+        <div className="flex-1">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Blog y Recursos</h1>
+        </div>
+        <div className="flex-1 flex justify-end">
+          {isAuthenticated && (
+            <Button 
+              to="/blog/crear" 
+              variant="primary"
+              className="hidden md:inline-flex"
+            >
+              + Crear Post
+            </Button>
+          )}
+        </div>
       </div>
-      <div className="flex-1 flex justify-end">
-        <Button 
-          to="/blog/crear" 
-          variant="primary"
-          className="hidden md:inline-flex"
-        >
-          + Crear Post
-        </Button>
-      </div>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Artículos, guías y casos de éxito sobre automatización, digitalización y 
+        optimización de procesos empresariales.
+      </p>
+      
+      {/* Botón móvil */}
+      {isAuthenticated && (
+        <div className="mt-6 md:hidden">
+          <Button 
+            to="/blog/crear" 
+            variant="primary"
+            size="sm"
+          >
+            + Crear Nuevo Post
+          </Button>
+        </div>
+      )}
     </div>
-    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-      Artículos, guías y casos de éxito sobre automatización, digitalización y 
-      optimización de procesos empresariales.
-    </p>
-    
-    {/* Botón móvil */}
-    <div className="mt-6 md:hidden">
-      <Button 
-        to="/blog/crear" 
-        variant="primary"
-        size="sm"
-      >
-        + Crear Nuevo Post
-      </Button>
-    </div>
-  </div>
-)
+  )
+}
 
 const LoadingState = () => (
   <div className="min-h-screen py-16">

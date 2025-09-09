@@ -4,6 +4,8 @@ import blogService from '../services/blogService'
 /**
  * Hook personalizado para manejar la creación de nuevas entradas del blog
  * Siguiendo principios de Single Responsibility y código limpio
+ * 
+ * El token JWT se maneja automáticamente a través del AuthContext global
  */
 export const useCreateBlogPost = () => {
   const [loading, setLoading] = useState(false)
