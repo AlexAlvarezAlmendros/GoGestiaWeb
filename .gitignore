@@ -175,3 +175,13 @@ REFACTORING_CONTACT_FORM.md
 DEPLOYMENT_404_SOLUTION.md
 SEO_COMPLETE_GUIDE.md
 VERCEL_404_SOLUTION.md
+src/utils/auth0Utils.js
+src/services/apiService.js
+src/hooks/useApiHooks.js
+src/components/PermissionGuard.jsx
+src/components/AuthDebug.jsx
+src/components/Auth0Handler.jsx
+src/components/ApiExampleUsage.jsx
+API_AUTHENTICATION_GUIDE.md
+AUTH0_SETUP.md
+ADMIN_ACCESS_SYSTEM.md

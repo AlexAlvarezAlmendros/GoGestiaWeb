@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import UserMenu from './UserMenu'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -8,6 +9,7 @@ const Header = () => {
   const navigation = [
     { name: 'Inicio', href: '/' },
     { name: 'Servicios', href: '/servicios' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contacto', href: '/contacto' }
   ]
 
@@ -49,8 +51,9 @@ const Header = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Right side - User Menu and CTA */}
+          <div className="hidden md:flex items-center space-x-4">
+            <UserMenu />
             <Link
               to="/contacto"
               className="btn-primary"
@@ -97,6 +100,12 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile User Menu */}
+              <div className="border-t border-gray-200 pt-4 mt-4">
+                <UserMenu isMobile={true} onClose={() => setIsMenuOpen(false)} />
+              </div>
+              
               <Link
                 to="/contacto"
                 className="block btn-primary mt-4 text-center"

@@ -1,0 +1,373 @@
+/* Estilos personalizados para el contenido del blog */
+
+/* Mejorar la apariencia de las listas */
+.article-content ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-content ul li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.article-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: #15803d;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  counter-reset: list-counter;
+}
+
+.article-content ol li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #374151;
+  counter-increment: list-counter;
+}
+
+.article-content ol li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  left: -1.5rem;
+  color: #15803d;
+  font-weight: bold;
+}
+
+/* Listas anidadas */
+.article-content ul ul,
+.article-content ol ol,
+.article-content ul ol,
+.article-content ol ul {
+  margin: 0.5rem 0;
+}
+
+.article-content ul ul li::before {
+  content: "◦";
+  color: #6b7280;
+}
+
+/* Mejorar código inline y bloques de código */
+.article-content code {
+  background-color: #f3f4f6;
+  color: #15803d;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Cascadia, "Cascadia Code", Roboto Mono, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.article-content pre {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid #374151;
+  margin: 1.5rem 0;
+}
+
+.article-content pre code {
+  background-color: transparent;
+  color: #f9fafb;
+  padding: 0;
+}
+
+/* Mejorar blockquotes */
+.article-content blockquote {
+  border-left: 4px solid #84cc16;
+  background-color: #f9fafb;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #4b5563;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.article-content blockquote p {
+  margin-bottom: 0;
+}
+
+.article-content blockquote cite {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+/* Mejorar tablas */
+.article-content table {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.article-content thead {
+  background-color: #f9fafb;
+}
+
+.article-content th {
+  color: #15803d;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.article-content td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.article-content tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Mejorar imágenes */
+.article-content img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin: 2rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.article-content figure {
+  margin: 2rem 0;
+}
+
+.article-content figcaption {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Separadores */
+.article-content hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 3rem 0;
+}
+
+/* Enlaces mejorados */
+.article-content a {
+  color: #15803d;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #84cc16;
+  transition: all 0.2s ease;
+}
+
+.article-content a:hover {
+  color: #166534;
+  border-bottom-color: #15803d;
+}
+
+/* Highlights y marcados */
+.article-content mark {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+/* Citas inline */
+.article-content q {
+  font-style: italic;
+  color: #4b5563;
+}
+
+.article-content q::before {
+  content: """;
+}
+
+.article-content q::after {
+  content: """;
+}
+
+/* Definiciones */
+.article-content dt {
+  font-weight: 600;
+  color: #15803d;
+  margin-bottom: 0.25rem;
+}
+
+.article-content dd {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  color: #374151;
+}
+
+/* Elementos de formulario en contenido */
+.article-content input,
+.article-content textarea,
+.article-content select {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.article-content input:focus,
+.article-content textarea:focus,
+.article-content select:focus {
+  box-shadow: 0 0 0 2px #15803d;
+  border-color: transparent;
+}
+
+/* Botones en contenido */
+.article-content button {
+  background-color: #15803d;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.article-content button:hover {
+  background-color: #166534;
+}
+
+/* Alerts y callouts personalizados */
+.article-content .callout-info {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.article-content .callout-warning {
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.article-content .callout-success {
+  background-color: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.article-content .callout-error {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Mejorar el espaciado entre elementos */
+.article-content > * + * {
+  margin-top: 1.5rem;
+}
+
+.article-content h2 + *,
+.article-content h3 + *,
+.article-content h4 + * {
+  margin-top: 1rem;
+}
+
+/* Títulos con mejor espaciado */
+.article-content h2 {
+  font-size: 1.875rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.article-content h4 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #374151;
+}
+
+/* Párrafos */
+.article-content p {
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive design para dispositivos móviles */
+@media (max-width: 640px) {
+  .article-content {
+    font-size: 1rem;
+  }
+  
+  .article-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  .article-content h4 {
+    font-size: 1.125rem;
+  }
+  
+  .article-content pre {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .article-content table {
+    font-size: 0.875rem;
+  }
+  
+  .article-content th,
+  .article-content td {
+    padding: 0.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .article-content {
+    color: black;
+  }
+  
+  .article-content a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .article-content a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+}
