@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import Card from '../components/Card'
 import Button from '../components/Button'
+import SEOHead from '../components/SEOHead'
 import RelatedPosts from '../components/RelatedPosts'
 import { useBlogPost } from '../hooks/useBlogPosts'
 import useNewsletter from '../hooks/useNewsletter'
@@ -74,7 +75,20 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen py-16">
+    <>
+      <SEOHead
+        title={post?.seo?.metaTitle || post?.title}
+        description={post?.seo?.metaDescription || post?.excerpt}
+        image={post?.featuredImage}
+        url={`/blog/${post?.slug}`}
+        type="article"
+        publishedTime={post?.publishedAt}
+        modifiedTime={post?.updatedAt}
+        author={post?.author?.name}
+        tags={post?.tags || []}
+      />
+      
+      <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs post={post} />
 
@@ -96,6 +110,7 @@ const BlogPost = () => {
         <ArticleNavigation />
       </div>
     </div>
+    </>
   )
 }
 
