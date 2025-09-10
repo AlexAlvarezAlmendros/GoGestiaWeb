@@ -187,30 +187,6 @@ La configuración del backend se realiza a través de la variable `VITE_API_URL`
 - **Cookies**: Política de cookies detallada
 - **Consentimientos**: Formularios con checkboxes de aceptación
 
-## 🚀 Próximos Pasos (Pendientes)
-
-### Testing (3h)
-- [ ] Setup de testing con Vitest
-- [ ] Tests unitarios para componentes
-- [ ] Tests de integración para formularios
-
-### Optimización (3h)
-- [ ] Lazy loading de componentes
-- [ ] Optimización de imágenes
-- [ ] Performance optimization
-- [ ] SEO básico
-
-### Backend Integration (2h)
-- [ ] Integrar con backend real
-- [ ] Manejo de errores mejorado
-- [ ] Estados de loading más específicos
-
-### Despliegue (2h)
-- [ ] Configurar Vercel
-- [ ] Configurar dominio
-- [ ] Variables de entorno de producción
-- [ ] Deploy y verificación final
-
 ## 👥 Contribución
 
 Este proyecto sigue las especificaciones funcionales definidas en la documentación del negocio GoGenAI.
