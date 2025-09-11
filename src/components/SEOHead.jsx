@@ -1,7 +1,9 @@
 import { Helmet } from 'react-helmet-async'
+import SEOHeadNative from './SEOHeadNative'
 
 /**
  * Componente para gestión completa de SEO y meta tags
+ * Con fallback nativo si react-helmet-async falla
  * Optimizado para indexación en Google y redes sociales
  */
 const SEOHead = ({ 
@@ -17,6 +19,8 @@ const SEOHead = ({
   canonical,
   noindex = false
 }) => {
+  // Intentar usar react-helmet-async, con fallback a versión nativa
+  try {
   // Configuración base del sitio
   const siteConfig = {
     name: import.meta.env.VITE_SITE_NAME || 'GoGestia',
@@ -136,6 +140,25 @@ const SEOHead = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     </Helmet>
   )
+  } catch (error) {
+    // Fallback a versión nativa si react-helmet-async falla
+    console.warn('react-helmet-async failed, using native SEO implementation:', error)
+    return (
+      <SEOHeadNative
+        title={title}
+        description={description}
+        image={image}
+        url={url}
+        type={type}
+        publishedTime={publishedTime}
+        modifiedTime={modifiedTime}
+        author={author}
+        tags={tags}
+        canonical={canonical}
+        noindex={noindex}
+      />
+    )
+  }
 }
 
 export default SEOHead
