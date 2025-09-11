@@ -1,13 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://gogestia.com/sitemap.xml
-
-# Disallow admin areas (si las tienes)
+# Disallow admin and debug areas
 Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$
+Disallow: /debug/
+Disallow: /api/
+Disallow: /admin/login
+
+
+# Sitemap location
+Sitemap: https://gogestia.com/sitemap.xml
 
 # Allow social media crawlers
 User-agent: facebookexternalhit/*
@@ -22,5 +24,11 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Crawl delay
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# General crawl delay
 Crawl-delay: 1

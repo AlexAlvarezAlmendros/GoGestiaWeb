@@ -1,11 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
-import { useSEO } from '../hooks/useSEO'
+import SEOHead from '../components/SEOHead'
 
 const Home = () => {
-  // Configurar SEO para la página de inicio
-  useSEO('home')
   
   const services = [
     {
@@ -77,7 +75,15 @@ const Home = () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+        title="GoGestia - Automatización y Digitalización de Procesos Empresariales"
+        description="Automatizamos tus procesos empresariales con IA, desarrollamos apps internas y externas, y creamos integraciones para multiplicar tu eficiencia."
+        url="/"
+        type="website"
+      />
+      
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-brand-dark-green to-green-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -244,6 +250,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 
