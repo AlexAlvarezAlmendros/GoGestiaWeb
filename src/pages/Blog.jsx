@@ -78,7 +78,7 @@ const Blog = () => {
           />
         </div>
 
-        <BlogCTA />
+        
       </div>
     </div>
     </>
@@ -578,7 +578,7 @@ const BlogCTA = () => (
           <Button to="/contacto">
             Enviar sugerencia
           </Button>
-          <Button variant="outline" href="mailto:blog@gogenaiweb.com">
+          <Button variant="outline" href="mailto:contacto@gogenaiweb.com">
             Contactar por email
           </Button>
         </div>
