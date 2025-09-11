@@ -555,7 +555,7 @@ const UsefulLinksCard = () => (
 
 const CTACard = () => (
   <div className="bg-gradient-to-br from-brand-dark-green to-green-800 p-6 rounded-xl text-white">
-    <h3 className="font-bold mb-2">¿Necesitas ayuda personalizada?</h3>
+    <h3 className="font-bold mb-2 text-white">¿Necesitas ayuda personalizada?</h3>
     <p className="text-sm mb-4 text-gray-100">
       Solicita tu diagnóstico gratuito y descubre cómo podemos ayudarte
     </p>
