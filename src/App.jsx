@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
+import { HelmetProvider } from 'react-helmet-async'
 import { AuthProvider } from './contexts/AuthContext'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
@@ -13,6 +14,7 @@ import AdminRoles from './pages/AdminRoles'
 import AuthDebug from './pages/AuthDebug'
 import AdminLogin from './pages/AdminLogin'
 import AdminAccess from './pages/AdminAccess'
+import AdminSEO from './pages/AdminSEO'
 import NotFound from './pages/NotFound'
 import PrivacyPolicy from './pages/legal/PrivacyPolicy'
 import LegalNotice from './pages/legal/LegalNotice'
@@ -24,22 +26,23 @@ import auth0Config from './config/auth0Config'
 
 function App() {
   return (
-    <Auth0Provider
-      domain={auth0Config.domain}
-      clientId={auth0Config.clientId}
-      authorizationParams={{
-        redirect_uri: window.location.origin,
-        ...(auth0Config.audience && { audience: auth0Config.audience }),
-        scope: "openid profile email read:posts create:posts edit:posts delete:posts"
-      }}
-      useRefreshTokens={false}
-      cacheLocation="memory"
-    >
-      <AuthProvider>
-        <LoadingProvider>
-          <Router>
-            <ScrollToTop />
-            <MainLayout>
+    <HelmetProvider>
+      <Auth0Provider
+        domain={auth0Config.domain}
+        clientId={auth0Config.clientId}
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+          ...(auth0Config.audience && { audience: auth0Config.audience }),
+          scope: "openid profile email read:posts create:posts edit:posts delete:posts"
+        }}
+        useRefreshTokens={false}
+        cacheLocation="memory"
+      >
+        <AuthProvider>
+          <LoadingProvider>
+            <Router>
+              <ScrollToTop />
+              <MainLayout>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/servicios" element={<Services />} />
@@ -65,6 +68,14 @@ function App() {
                 <Route path="/debug/auth" element={<AuthDebug />} />
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/admin/access-info" element={<AdminAccess />} />
+                <Route 
+                  path="/admin/seo" 
+                  element={
+                    <ProtectedRoute requiredRole="Admin">
+                      <AdminSEO />
+                    </ProtectedRoute>
+                  } 
+                />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/legal/privacidad" element={<PrivacyPolicy />} />
                 <Route path="/legal/aviso-legal" element={<LegalNotice />} />
@@ -77,6 +88,7 @@ function App() {
         </LoadingProvider>
       </AuthProvider>
     </Auth0Provider>
+    </HelmetProvider>
   )
 }
 

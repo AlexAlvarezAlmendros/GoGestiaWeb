@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { } from 'react'
 import Card from '../components/Card'
 import Button from '../components/Button'
-import useSEO from '../hooks/useSEO'
+import SEOHead from '../components/SEOHead'
 import useBlogPosts from '../hooks/useBlogPosts'
 import useBlogCategories from '../hooks/useBlogCategories'
 import useNewsletter from '../hooks/useNewsletter'
@@ -10,20 +10,10 @@ import { useAuth } from '../hooks/useAuth'
 import { formatDate, formatReadTime } from '../utils/blogUtils'
 
 const Blog = () => {
-  const { updateSEO } = useSEO()
   const { filters, hasActiveFilters, activeFilters, handleSearchSubmit, setCategory, setPage } = useUrlFilters()
   const { featuredPosts, recentPosts, loading, error, pagination } = useBlogPosts(filters)
   const { categories } = useBlogCategories(true)
   const newsletter = useNewsletter()
-
-  // Configurar SEO
-  useEffect(() => {
-    updateSEO({
-      title: 'Blog y Recursos - GoGestia',
-      description: 'Artículos, guías y casos de éxito sobre automatización, digitalización y optimización de procesos empresariales.',
-      keywords: 'blog, automatización, digitalización, procesos empresariales, IA, casos de éxito'
-    })
-  }, [updateSEO])
 
   const handleCategoryChange = (categorySlug) => {
     setCategory(categorySlug)
@@ -46,7 +36,15 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen py-16">
+    <>
+      <SEOHead
+        title="Blog y Recursos - GoGestia"
+        description="Artículos, guías y casos de éxito sobre automatización, digitalización y optimización de procesos empresariales."
+        url="/blog"
+        type="website"
+      />
+      
+      <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BlogHeader />
         
@@ -83,6 +81,7 @@ const Blog = () => {
         <BlogCTA />
       </div>
     </div>
+    </>
   )
 }
 
