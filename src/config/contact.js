@@ -5,8 +5,8 @@
 
 export const contactConfig = {
   email: import.meta.env.VITE_CONTACT_EMAIL || 'contacto@gogestia.com',
-  phone: import.meta.env.VITE_CONTACT_PHONE || '+34 656 852 437',
-  phoneDisplay: import.meta.env.VITE_CONTACT_PHONE_DISPLAY || '+34 656 852 437',
+  phone: import.meta.env.VITE_CONTACT_PHONE || '+34 675 56 75 16',
+  phoneDisplay: import.meta.env.VITE_CONTACT_PHONE_DISPLAY || '+34 675 56 75 16',
   companyName: import.meta.env.VITE_SITE_NAME || 'GoGestia',
   
   // Horarios de atención

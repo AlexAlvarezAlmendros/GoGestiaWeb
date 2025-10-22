@@ -77,8 +77,6 @@ const Blog = () => {
             onCategoryChange={handleCategoryChange}
           />
         </div>
-
-        
       </div>
     </div>
     </>
