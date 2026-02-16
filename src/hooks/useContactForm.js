@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useLoading } from './LoadingProvider'
 import contactService from '../services/contactService'
 
 /**
  * Hook personalizado para manejar la lógica del formulario de contacto
- * Maneja el estado del formulario, validaciones y envío
+ * Valida localmente y envía los datos a la API
  */
 export const useContactForm = () => {
   const navigate = useNavigate()
-  const { setLoading } = useLoading()
   
   // Estado inicial del formulario
   const initialFormState = {
@@ -45,6 +43,17 @@ export const useContactForm = () => {
       }))
     }
   }
+
+  // Validaciones locales
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^[+]?[0-9\s-()]{9,15}$/
+    return phoneRegex.test(phone.replace(/\s/g, ''))
+  }
   
   /**
    * Valida el formulario completo
@@ -60,13 +69,13 @@ export const useContactForm = () => {
     
     if (!formData.email.trim()) {
       newErrors.email = 'El email es obligatorio'
-    } else if (!contactService.validateEmail(formData.email)) {
+    } else if (!validateEmail(formData.email)) {
       newErrors.email = 'El formato del email no es válido'
     }
     
     if (!formData.phone.trim()) {
       newErrors.phone = 'El teléfono es obligatorio'
-    } else if (!contactService.validatePhone(formData.phone)) {
+    } else if (!validatePhone(formData.phone)) {
       newErrors.phone = 'El formato del teléfono no es válido'
     }
     
@@ -90,7 +99,7 @@ export const useContactForm = () => {
   }
   
   /**
-   * Maneja el envío del formulario
+   * Maneja el envío del formulario a la API
    */
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -103,39 +112,29 @@ export const useContactForm = () => {
     }
     
     setIsSubmitting(true)
-    setLoading(true)
     
     try {
       await contactService.submitContact(formData)
       
-      // Resetear formulario
+      // Resetear formulario y redirigir
       setFormData(initialFormState)
       setErrors({})
-      
-      // Redirigir a página de agradecimiento
       navigate('/gracias')
       
     } catch (error) {
       console.error('Error al enviar formulario:', error)
       
-      // Determinar el mensaje de error apropiado
       let errorMessage = 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.'
       
       if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        // Error de conexión
         errorMessage = 'No se pudo conectar con el servidor. Por favor, verifica tu conexión a internet e inténtalo de nuevo.'
       } else if (error.message) {
-        // Error específico del servidor
         errorMessage = error.message
       }
       
-      setErrors({
-        submit: errorMessage
-      })
-      
+      setErrors({ submit: errorMessage })
     } finally {
       setIsSubmitting(false)
-      setLoading(false)
     }
   }
   
@@ -148,67 +147,13 @@ export const useContactForm = () => {
     setIsSubmitting(false)
   }
   
-  /**
-   * Valida un campo específico
-   */
-  const validateField = (fieldName, value) => {
-    switch (fieldName) {
-      case 'name':
-        return !value.trim() 
-          ? 'El nombre es obligatorio' 
-          : value.trim().length < 2 
-            ? 'El nombre debe tener al menos 2 caracteres' 
-            : ''
-            
-      case 'email':
-        return !value.trim() 
-          ? 'El email es obligatorio' 
-          : !contactService.validateEmail(value) 
-            ? 'El formato del email no es válido' 
-            : ''
-            
-      case 'phone':
-        return !value.trim() 
-          ? 'El teléfono es obligatorio' 
-          : !contactService.validatePhone(value) 
-            ? 'El formato del teléfono no es válido' 
-            : ''
-            
-      case 'company':
-        return !value.trim() 
-          ? 'El nombre de la empresa es obligatorio' 
-          : value.trim().length < 2 
-            ? 'El nombre de la empresa debe tener al menos 2 caracteres' 
-            : ''
-            
-      case 'message':
-        return !value.trim() 
-          ? 'El mensaje es obligatorio' 
-          : value.trim().length < 10 
-            ? 'El mensaje debe tener al menos 10 caracteres' 
-            : ''
-            
-      case 'acceptPrivacy':
-        return !value ? 'Debe aceptar la política de privacidad' : ''
-        
-      default:
-        return ''
-    }
-  }
-  
   return {
-    // Estado
     formData,
     errors,
     isSubmitting,
-    
-    // Acciones
     handleChange,
     handleSubmit,
     resetForm,
-    validateField,
-    
-    // Utilidades
     isFormValid: Object.keys(validateForm()).length === 0,
     hasChanges: JSON.stringify(formData) !== JSON.stringify(initialFormState)
   }

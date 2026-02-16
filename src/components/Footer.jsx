@@ -4,95 +4,99 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-dark-green text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-background-light pt-16 pb-8 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo y descripción */}
-          <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
-               <img 
-                src="/GoGestiaLogo.svg" 
-                alt="GoGestia Logo" 
-                className="w-10 h-10 filter brightness-0 invert"
-              />
-              <span className="text-white font-bold text-xl">GoGestia</span>
+          <div className="col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <img src="/GoGestiaIcon.svg" alt="GoGestia" className="w-8 h-8 rounded-md" />
+              <span className="text-agency-dark font-bold text-lg">GoGestia</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
-              Detectamos ineficiencias en tus procesos y te proponemos soluciones personalizadas 
-              que aumentan tu rentabilidad y productividad.
+            <p className="text-gray-500 text-sm">
+              Expertos en automatización de procesos y soluciones de Inteligencia Artificial para el sector B2B.
             </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://www.linkedin.com/company/gogestia" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-brand-lime transition-colors"
-              >
-                <span className="sr-only">LinkedIn</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-            </div>
           </div>
 
-          {/* Enlaces rápidos */}
+          {/* Servicios */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Enlaces</h3>
-            <ul className="space-y-2">
+            <h4 className="text-agency-dark font-bold mb-4">Servicios</h4>
+            <ul className="space-y-2 text-sm text-gray-500">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-brand-lime transition-colors">
+                <Link to="/servicios" className="hover:text-agency-dark transition-colors">
+                  Automatización IA
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="hover:text-agency-dark transition-colors">
+                  Desarrollo Web
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="hover:text-agency-dark transition-colors">
+                  Consultoría Técnica
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Empresa */}
+          <div>
+            <h4 className="text-agency-dark font-bold mb-4">Empresa</h4>
+            <ul className="space-y-2 text-sm text-gray-500">
+              <li>
+                <Link to="/" className="hover:text-agency-dark transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" className="text-gray-300 hover:text-brand-lime transition-colors">
-                  Servicios
-                </Link>
-              </li>
-              <li>
-                <Link to="/contacto" className="text-gray-300 hover:text-brand-lime transition-colors">
+                <Link to="/contacto" className="hover:text-agency-dark transition-colors">
                   Contacto
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contacto */}
+          {/* Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h4 className="text-agency-dark font-bold mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm text-gray-500">
               <li>
-                <a href="mailto:contacto@gogestia.com" className="hover:text-brand-lime transition-colors">
-                  contacto@gogestia.com
-                </a>
+                <Link to="/legal/privacidad" className="hover:text-agency-dark transition-colors">
+                  Privacidad
+                </Link>
               </li>
               <li>
-                <a href="tel:+34675667516" className="hover:text-brand-lime transition-colors">
-                  +34 675 56 75 16
-                </a>
+                <Link to="/legal/aviso-legal" className="hover:text-agency-dark transition-colors">
+                  Aviso Legal
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal/cookies" className="hover:text-agency-dark transition-colors">
+                  Cookies
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Separador y enlaces legales */}
-        <div className="border-t border-gray-600 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} GoGestia. Todos los derechos reservados.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/legal/aviso-legal" className="text-gray-400 hover:text-brand-lime text-sm transition-colors">
-                Aviso Legal
-              </Link>
-              <Link to="/legal/privacidad" className="text-gray-400 hover:text-brand-lime text-sm transition-colors">
-                Privacidad
-              </Link>
-              <Link to="/legal/cookies" className="text-gray-400 hover:text-brand-lime text-sm transition-colors">
-                Cookies
-              </Link>
-            </div>
+        {/* Bottom bar */}
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-400">
+            © {currentYear} GoGestia. Todos los derechos reservados.
+          </p>
+          <div className="flex space-x-6">
+            <a
+              href="https://www.linkedin.com/company/gogestia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-agency-dark transition-colors"
+            >
+              <span className="sr-only">LinkedIn</span>
+              <svg aria-hidden="true" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path clipRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fillRule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

@@ -1,158 +1,91 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Button from '../components/Button'
+import SEOHead from '../components/SEOHead'
 
 const Thanks = () => {
-  // Redirección automática después de 10 segundos (opcional)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      // Uncomment if you want auto-redirect
-      // window.location.href = '/'
-    }, 10000)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
-    <div className="min-h-screen py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Success Icon */}
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6">
-            <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-        </div>
+    <>
+      <SEOHead
+        title="Solicitud Recibida - GoGestia"
+        description="Hemos recibido tu solicitud. Nuestro equipo se pondrá en contacto contigo en 24-48 horas."
+        url="/gracias"
+      />
 
-        {/* Main Message */}
-        <h1 className="text-4xl md:text-5xl font-bold text-brand-dark-green mb-6">
-          ¡Gracias por tu solicitud!
-        </h1>
-        
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Hemos recibido tu solicitud de diagnóstico gratuito correctamente. 
-          Nuestro equipo la revisará y se pondrá en contacto contigo muy pronto.
-        </p>
+      <main className="flex-grow flex items-center justify-center px-4 relative overflow-hidden min-h-screen pt-20">
+        {/* Background grid pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgba(198,244,98,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(198,244,98,0.05) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }}
+        />
+        {/* Background blurs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl -z-10" />
 
-        {/* Next Steps */}
-        <div className="bg-gray-50 rounded-xl p-8 mb-12 text-left max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-brand-dark-green mb-6 text-center">
-            Próximos pasos
-          </h2>
-          
-          <div className="space-y-6">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center mr-4">
-                <span className="text-brand-dark-green font-bold">1</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-brand-dark-green mb-1">Revisión de tu solicitud</h3>
-                <p className="text-gray-600">Analizaremos la información proporcionada para preparar nuestra reunión.</p>
-                <p className="text-sm text-gray-500 mt-1"><strong>Tiempo estimado:</strong> 2-4 horas</p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center mr-4">
-                <span className="text-brand-dark-green font-bold">2</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-brand-dark-green mb-1">Primer contacto</h3>
-                <p className="text-gray-600">Te contactaremos para agendar una reunión inicial y conocer mejor tu situación.</p>
-                <p className="text-sm text-gray-500 mt-1"><strong>Plazo:</strong> 24-48 horas</p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center mr-4">
-                <span className="text-brand-dark-green font-bold">3</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-brand-dark-green mb-1">Diagnóstico gratuito</h3>
-                <p className="text-gray-600">Reunión de diagnóstico y auditoría básica de tus procesos (máximo 3 horas).</p>
-                <p className="text-sm text-gray-500 mt-1"><strong>Modalidad:</strong> Presencial u online</p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-brand-lime rounded-full flex items-center justify-center mr-4">
-                <span className="text-brand-dark-green font-bold">4</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-brand-dark-green mb-1">Informe personalizado</h3>
-                <p className="text-gray-600">Entregaremos un informe detallado con puntos críticos y propuesta de solución.</p>
-                <p className="text-sm text-gray-500 mt-1"><strong>Entrega:</strong> 7 días después del diagnóstico</p>
-              </div>
+        {/* Success Card */}
+        <div className="max-w-2xl w-full text-center relative z-10">
+          {/* Animated icon */}
+          <div className="mx-auto mb-8 relative w-24 h-24 flex items-center justify-center">
+            <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping opacity-75" />
+            <div className="relative bg-primary text-agency-dark w-24 h-24 rounded-full flex items-center justify-center shadow-lg shadow-primary/20">
+              <span className="material-symbols-outlined text-5xl">check</span>
             </div>
           </div>
-        </div>
 
-        {/* Contact Info */}
-        <div className="bg-brand-dark-green text-white rounded-xl p-8 mb-12">
-          <h2 className="text-2xl font-bold mb-4">¿Tienes alguna pregunta urgente?</h2>
-          <p className="mb-6">
-            Si necesitas contactarnos antes de que te llamemos, puedes hacerlo a través de:
+          {/* Headline */}
+          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+            Solicitud{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">
+              Recibida
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl font-medium text-gray-700 mb-4">
+            Gracias por confiar en GoGestia.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="mailto:contacto@gogestia.com" 
-              className="flex items-center text-brand-lime hover:text-white transition-colors"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-              </svg>
-              contacto@gogestia.com
-            </a>
-            
-            <span className="text-gray-400 hidden sm:block">|</span>
-            
-            <a 
-              href="tel:+34656852437" 
-              className="flex items-center text-brand-lime hover:text-white transition-colors"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              +34 656 852 437
-            </a>
-          </div>
-        </div>
 
-        {/* Secondary CTAs */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-brand-dark-green mb-6">
-            Mientras tanto, puedes:
-          </h2>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/servicios" variant="outline">
-              Conocer nuestros servicios
-            </Button>
-            
-            <Button 
-              href="https://www.linkedin.com/company/gogestia" 
-              target="_blank"
-              variant="ghost"
-            >
-              Síguenos en LinkedIn
-            </Button>
+          {/* Info box */}
+          <div className="max-w-lg mx-auto bg-white/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 mb-10 shadow-sm">
+            <p className="text-gray-600 leading-relaxed text-lg">
+              Hemos recibido tu solicitud de diagnóstico. Nuestros especialistas revisarán tu caso y te contactarán en un plazo de{' '}
+              <span className="font-bold text-emerald-800">24-48 horas</span> para comentar los próximos pasos.
+            </p>
           </div>
-        </div>
 
-        {/* Auto-redirect notice */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <p className="text-sm text-gray-500">
-            ¿Quieres volver al inicio?{' '}
-            <Link to="/" className="text-brand-dark-green hover:underline font-medium">
-              Haz clic aquí
+          {/* Action buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/servicios"
+              className="w-full sm:w-auto px-8 py-3.5 bg-agency-dark text-white font-bold rounded-lg hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 group"
+            >
+              <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">grid_view</span>
+              Ver nuestros servicios
             </Link>
-          </p>
+            <a
+              href="https://www.linkedin.com/company/gogestia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white border-2 border-gray-200 text-gray-700 font-bold rounded-lg hover:border-primary hover:text-emerald-800 transition-all duration-300 inline-flex items-center justify-center gap-2"
+            >
+              <svg aria-hidden="true" className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              Síguenos en LinkedIn
+            </a>
+          </div>
+
+          {/* Help link */}
+          <div className="mt-8 text-sm text-gray-500">
+            ¿Necesitas ayuda inmediata?{' '}
+            <a href="mailto:contacto@gogestia.com" className="text-emerald-700 underline decoration-primary/50 hover:decoration-primary decoration-2 underline-offset-2 transition-all">
+              Escríbenos directamente
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   )
 }
 

@@ -1,255 +1,207 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Button from '../components/Button'
-import Card from '../components/Card'
 import SEOHead from '../components/SEOHead'
 
 const Home = () => {
-  
+
   const services = [
     {
-      icon: '🤖',
+      icon: 'smart_toy',
       title: 'Automatización con IA',
-      description: 'Chatbots internos, RPA con Python, IA para clasificación de correos y procesos repetitivos.'
+      description: 'Implementamos agentes de IA que manejan atención al cliente, cualificación de leads y tareas administrativas 24/7.'
     },
     {
-      icon: '📱',
-      title: 'Apps Internas',
-      description: 'Dashboards, gestión de tareas, CRM interno, control de stock para organizar flujos.'
+      icon: 'dashboard',
+      title: 'Aplicaciones Internas',
+      description: 'Desarrollamos dashboards y herramientas de gestión a medida para optimizar el flujo de trabajo de tu equipo.'
     },
     {
-      icon: '🌐',
-      title: 'Apps Externas',
-      description: 'Portal de clientes, landing de autoservicio para mejorar la experiencia del cliente.'
+      icon: 'web',
+      title: 'Aplicaciones Externas',
+      description: 'Portales de cliente y aplicaciones web robustas para ofrecer una experiencia digital superior a tus usuarios.'
     },
     {
-      icon: '🔗',
+      icon: 'hub',
       title: 'Integraciones',
-      description: 'Conexión entre apps existentes, APIs y flujos entre diferentes herramientas SaaS.'
-    }
-  ]
-
-  const companyTypes = [
-    {
-      type: 'PyMEs Industriales',
-      problems: 'Control de stock, trazabilidad, tareas manuales',
-      solution: 'App interna + automatización de partes'
-    },
-    {
-      type: 'Sector Salud',
-      problems: 'Formularios, procesos lentos, muchos documentos',
-      solution: 'Digitalización y RPA con IA'
-    },
-    {
-      type: 'Consultoras',
-      problems: 'Muchos Excel, informes, tareas repetitivas',
-      solution: 'Dashboards + IA + flujos automatizados'
-    },
-    {
-      type: 'Inmobiliarias',
-      problems: 'Seguimiento de leads, visitas, documentos',
-      solution: 'CRM ligero + automatización de firmas'
+      description: 'Conectamos tu CRM, ERP y herramientas favoritas para eliminar la duplicidad de datos y errores humanos.'
     }
   ]
 
   const processSteps = [
     {
-      step: '1',
-      title: 'Diagnóstico Gratuito',
-      description: 'Reunión inicial y auditoría básica de tus procesos (máximo 3h)'
+      num: '01',
+      title: 'Diagnóstico',
+      description: 'Analizamos tus flujos de trabajo actuales para identificar cuellos de botella y oportunidades.',
+      highlight: false
     },
     {
-      step: '2',
-      title: 'Informe Personalizado',
-      description: 'Entregamos informe con puntos críticos y propuesta de solución en 7 días'
+      num: '02',
+      title: 'Informe',
+      description: 'Entregamos una propuesta detallada con el ROI estimado y la arquitectura de la solución.',
+      highlight: false
     },
     {
-      step: '3',
-      title: 'Implementación',
-      description: 'Desarrollo e implementación de la solución acordada'
+      num: '03',
+      title: 'Implementación & Cierre',
+      description: 'Desarrollamos, probamos y desplegamos la solución. Formamos a tu equipo para el uso.',
+      highlight: true
     },
     {
-      step: '4',
+      num: '04',
       title: 'Mantenimiento',
-      description: 'Soporte continuo y escalado según tus necesidades'
+      description: 'Soporte continuo y mejoras iterativas para asegurar que la automatización evoluciona contigo.',
+      highlight: false
     }
   ]
 
   return (
     <>
       <SEOHead
-        title="GoGestia - Automatización y Digitalización de Procesos Empresariales"
-        description="Automatizamos tus procesos empresariales con IA, desarrollamos apps internas y externas, y creamos integraciones para multiplicar tu eficiencia."
+        title="GoGestia - Automatización y Mejora de Procesos con IA"
+        description="Transformamos tu empresa eliminando tareas repetitivas y escalando tu eficiencia operativa con inteligencia artificial."
         url="/"
         type="website"
       />
-      
-      <div className="min-h-screen">
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-dark-green to-green-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-            Automatiza tus procesos,
-            <br />
-            <span className="text-brand-lime">multiplica tu eficiencia</span>
+      <header className="relative bg-agency-dark pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
+        {/* Abstract Decorations */}
+        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-8">
+            Automatización de Procesos<br className="hidden md:block" /> y Soluciones con{' '}
+            <span className="text-primary relative inline-block">
+              IA
+              <svg className="absolute -bottom-2 w-full h-3 text-primary/30" preserveAspectRatio="none" viewBox="0 0 100 10">
+                <path d="M0 5 Q 50 10 100 5" fill="transparent" stroke="currentColor" strokeWidth="8" />
+              </svg>
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
-            Detectamos ineficiencias en tus procesos y te proponemos soluciones personalizadas 
-            que aumentan tu rentabilidad y productividad, sin compromiso.
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-300 font-light">
+            Transformamos tu empresa eliminando tareas repetitivas y escalando tu eficiencia operativa.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/contacto" size="lg" className="text-lg">
+          <div className="mt-10 flex justify-center gap-4 flex-col sm:flex-row">
+            <Link to="/contacto" className="h-12 px-8 rounded-lg bg-primary text-agency-dark text-base font-bold shadow-[0_4px_14px_rgba(198,244,98,0.5)] hover:shadow-[0_6px_20px_rgba(198,244,98,0.6)] hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 transition-all">
               Solicita tu diagnóstico gratuito
-            </Button>
-            <Button to="/servicios" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-dark-green">
-              Ver servicios
-            </Button>
+            </Link>
+            <Link to="/servicios" className="h-12 px-8 rounded-lg bg-white/10 border border-white/20 text-white text-base font-bold hover:bg-white/15 inline-flex items-center justify-center gap-2 transition-all">
+              <span className="material-symbols-outlined text-xl">play_circle</span> Ver servicios
+            </Link>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* <section className="py-16 bg-gray-50">
+      {/* Value Proposition / Quote Section */}
+      <section className="relative bg-background-light py-20 lg:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="text-2xl md:text-3xl font-semibold text-brand-dark-green italic">
-            "Detectamos ineficiencias en tus procesos y te proponemos soluciones personalizadas 
-            que aumentan tu rentabilidad y productividad, sin compromiso."
-          </blockquote>
-        </div>
-      </section> */}
-      
-
-      {/* Servicios */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Qué ofrecemos?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Soluciones tecnológicas adaptadas a las necesidades específicas de tu empresa
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Card key={index}>
-                <div className="text-center">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <Card.Title className="mb-3 text-center">{service.title}</Card.Title>
-                  <Card.Description className="text-center">{service.description}</Card.Description>
-                </div>
-              </Card>
-            ))}
+          <div className="relative">
+            <span className="absolute -top-10 -left-6 text-9xl text-agency-dark/5 font-serif leading-none">"</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-agency-dark leading-snug">
+              Detectamos ineficiencias y proponemos soluciones tecnológicas a medida,{' '}
+              <span className="bg-primary/30 px-2 rounded-lg inline-block transform -rotate-1">sin compromiso.</span>
+            </h2>
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <div className="h-px w-12 bg-agency-dark/20"></div>
+              <span className="text-sm font-semibold uppercase tracking-wider text-gray-500">Nuestra Promesa</span>
+              <div className="h-px w-12 bg-agency-dark/20"></div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Casos por tipo de empresa */}
-      <section className="py-16 bg-gray-50">
+      {/* Services Grid Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Cómo funciona?</h2>
-            <p className="text-xl text-gray-600">
-              Nuestro proceso paso a paso para transformar tu empresa
+          <div className="text-center mb-16">
+            <h2 className="text-base text-agency-dark font-bold tracking-wide uppercase">Qué Ofrecemos</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Tecnología para Escalar
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-lime rounded-full text-brand-dark-green font-bold text-xl mb-4">
-                  {step.step}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group relative bg-background-light p-8 rounded-2xl border border-gray-100 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
+              >
+                <div className="absolute top-8 right-8 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <span className="material-symbols-outlined text-agency-dark text-2xl">{service.icon}</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-brand-dark-green">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-                {/* Flecha conectora - solo visible en pantallas grandes y no en el último elemento */}
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-8 left-full transform -translate-y-1/2 w-8 items-center justify-center">
-                    <svg className="w-6 h-6 text-brand-lime" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                )}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 pr-16">{service.title}</h3>
+                <p className="text-gray-600 mb-6">{service.description}</p>
+                <a href="/servicios" className="inline-flex items-center text-agency-dark font-semibold hover:gap-2 transition-all">
+                  Saber más <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Cómo funciona */}
-      <section className="py-16">
+      {/* How It Works Section */}
+      <section className="py-20 lg:py-32 bg-background-light overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Casos comunes por sector</h2>
-            <p className="text-xl text-gray-600">
-              Cada empresa tiene necesidades únicas. Aquí algunos ejemplos de cómo ayudamos
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {companyTypes.map((company, index) => (
-              <Card key={index} className="border-l-4 border-brand-lime">
-                <Card.Header>
-                  <Card.Title>{company.type}</Card.Title>
-                </Card.Header>
-                <Card.Content>
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-red-600 mb-2">Problemas comunes:</h4>
-                    <p className="text-gray-600">{company.problems}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-green-600 mb-2">Nuestra solución:</h4>
-                    <p className="text-gray-600">{company.solution}</p>
-                  </div>
-                </Card.Content>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Resultados estimados */}
-      <section className="py-16 bg-brand-dark-green text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Resultados que puedes esperar</h2>
-            <p className="text-xl text-gray-200">
-              Beneficios reales que nuestros clientes experimentan
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-brand-lime mb-2">60%</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Ahorro de tiempo</h3>
-              <p className="text-gray-200">Automatización de tareas repetitivas</p>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-5 mb-12 lg:mb-0">
+              <h2 className="text-base text-agency-dark font-bold tracking-wide uppercase mb-2">Cómo Trabajamos</h2>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-agency-dark mb-6">
+                Un proceso claro,<br /> sin tecnicismos
+              </h3>
+              <p className="text-lg text-gray-600 mb-8">
+                Nos encargamos de toda la complejidad técnica. Tú solo ves los resultados en tu cuenta de resultados y en el tiempo libre de tu equipo.
+              </p>
+              <Button to="/contacto" variant="secondary" size="md">
+                Agendar reunión inicial
+              </Button>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-brand-lime mb-2">90%</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Reducción de errores</h3>
-              <p className="text-gray-200">Procesos digitalizados y validados</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-brand-lime mb-2">3x</div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Mayor productividad</h3>
-              <p className="text-gray-200">Equipos más eficientes y organizados</p>
+
+            {/* Right Steps */}
+            <div className="lg:col-span-7 relative">
+              <div className="space-y-8 relative">
+                {processSteps.map((step, index) => (
+                  <div key={index} className="flex items-start group">
+                    <div className={`flex-shrink-0 w-16 h-16 rounded-full border-4 border-background-light flex items-center justify-center relative z-10 shadow-sm group-hover:scale-110 transition-transform duration-300 ${
+                      step.highlight ? 'bg-primary shadow-lg shadow-primary/30' : 'bg-white'
+                    }`}>
+                      {step.highlight ? (
+                        <span className="material-symbols-outlined text-agency-dark">handshake</span>
+                      ) : (
+                        <span className="text-agency-dark font-bold text-xl">{step.num}</span>
+                      )}
+                    </div>
+                    <div className={`ml-6 pt-2 bg-white p-6 rounded-xl flex-grow shadow-sm hover:shadow-md transition-shadow ${
+                      step.highlight ? 'border-l-4 border-primary' : ''
+                    }`}>
+                      <h4 className="text-xl font-bold text-gray-900">{step.title}</h4>
+                      <p className="mt-2 text-gray-500">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="py-16 bg-gray-50">
+      {/* CTA Section */}
+      <section className="py-20 bg-agency-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            ¿Listo para transformar tu empresa?
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl mb-6">
+            ¿Listo para automatizar tu negocio?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Obtén tu diagnóstico gratuito y descubre cómo podemos ayudarte a crecer
+          <p className="text-xl text-gray-300 mb-10">
+            La primera consulta es gratuita y te llevarás un plan de acción, trabajes con nosotros o no.
           </p>
-          <Button to="/contacto" size="lg" className="text-lg">
-            Quiero mi diagnóstico gratuito
-          </Button>
+          <div className="inline-block p-1 bg-white/10 rounded-2xl backdrop-blur-md">
+            <Button to="/contacto" size="lg" className="w-full sm:w-auto text-lg font-bold">
+              Solicita tu diagnóstico gratuito
+            </Button>
+          </div>
         </div>
       </section>
-    </div>
     </>
   )
 }

@@ -3,22 +3,60 @@
 @tailwind utilities;
 
 @layer base {
+  /* Ocultar scrollbar principal */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
   body {
-    @apply font-sans text-gray-900 bg-white;
+    @apply font-display text-slate-800 bg-background-light antialiased;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  /* Scrollbar minimalista para elementos internos */
+  *:not(html) {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148,163,184,0.3) transparent;
+  }
+  *:not(html)::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  *:not(html)::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *:not(html)::-webkit-scrollbar-thumb {
+    background: rgba(148,163,184,0.3);
+    border-radius: 9999px;
+  }
+  *:not(html)::-webkit-scrollbar-thumb:hover {
+    background: rgba(148,163,184,0.5);
+  }
+
+  ::selection {
+    @apply bg-primary text-agency-dark;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-brand-dark-green;
+    @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-lime text-brand-dark-green px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity;
+    @apply bg-primary text-agency-dark px-6 py-3 rounded-xl font-bold hover:brightness-95 transition-all duration-200 shadow-[0_0_20px_rgba(198,244,98,0.2)];
   }
   
   .btn-secondary {
-    @apply bg-brand-dark-green text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity;
+    @apply bg-agency-dark text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-outline {
+    @apply border border-primary/30 text-primary hover:bg-primary/10 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all;
   }
   
   .card {
