@@ -5,6 +5,7 @@ import DocumentProcessorDemo from '../components/demos/DocumentProcessorDemo'
 import StockControlDemo from '../components/demos/StockControlDemo'
 import ClientPortalDemo from '../components/demos/ClientPortalDemo'
 import APIIntegrationDemo from '../components/demos/APIIntegrationDemo'
+import LocalAIAgentDemo from '../components/demos/LocalAIAgentDemo'
 
 const Services = () => {
   const services = [
@@ -101,6 +102,39 @@ const Services = () => {
       ],
       demoComponent: <APIIntegrationDemo />,
     },
+    {
+      id: 'local-ai-agents',
+      icon: 'dns',
+      title: 'Agentes IA Locales',
+      description: 'Instalamos y mantenemos agentes de IA en tus propias máquinas. Datos 100% en local, sin coste por token y sin dependencia del cloud.',
+      useCaseDot: 'bg-emerald-500',
+      useCase: 'Servidor on-premise con Llama 3 procesando contratos confidenciales sin salir de la red corporativa.',
+      useCaseVisual: (
+        <div className="flex items-center gap-2 opacity-70 px-1 py-2">
+          <div className="flex flex-col gap-1 flex-1">
+            <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div className="h-full w-3/4 bg-emerald-500/70 rounded-full" />
+            </div>
+            <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div className="h-full w-1/2 bg-emerald-500/50 rounded-full" />
+            </div>
+            <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div className="h-full w-2/3 bg-emerald-500/60 rounded-full" />
+            </div>
+          </div>
+          <div className="w-10 h-10 rounded-md bg-slate-200 flex items-center justify-center shrink-0">
+            <span className="material-symbols-outlined text-slate-400 text-lg">memory</span>
+          </div>
+        </div>
+      ),
+      details: [
+        'Asesoramiento y suministro del hardware (servidores, GPUs, NAS)',
+        'Instalación y configuración del stack IA (Ollama, vLLM, RAG)',
+        'Despliegue de agentes y modelos open-source (Llama, Mistral, Qwen)',
+        'Mantenimiento, actualizaciones y monitorización 24/7',
+      ],
+      demoComponent: <LocalAIAgentDemo />,
+    },
   ]
 
   const features = [
@@ -167,7 +201,7 @@ const Services = () => {
           <p className="text-slate-500 mt-2">Tecnología escalable adaptada a empresas modernas.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service) => (
             <div
               key={service.id}

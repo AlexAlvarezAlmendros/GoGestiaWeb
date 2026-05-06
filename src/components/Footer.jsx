@@ -34,6 +34,11 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/servicios" className="hover:text-agency-dark transition-colors">
+                  Agentes IA Locales
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="hover:text-agency-dark transition-colors">
                   Consultoría Técnica
                 </Link>
               </li>

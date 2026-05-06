@@ -24,6 +24,11 @@ const Home = () => {
       icon: 'hub',
       title: 'Integraciones',
       description: 'Conectamos tu CRM, ERP y herramientas favoritas para eliminar la duplicidad de datos y errores humanos.'
+    },
+    {
+      icon: 'dns',
+      title: 'Agentes IA Locales',
+      description: 'Instalamos hardware y software para ejecutar agentes de IA en tus propias máquinas. Datos en local, sin cuotas por token y con mantenimiento incluido.'
     }
   ]
 
@@ -120,7 +125,7 @@ const Home = () => {
               Tecnología para Escalar
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 [&>div:nth-child(5)]:md:col-span-2">
             {services.map((service, index) => (
               <div
                 key={index}
