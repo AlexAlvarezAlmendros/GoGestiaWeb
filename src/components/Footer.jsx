@@ -90,6 +90,17 @@ const Footer = () => {
           <p className="text-sm text-gray-400">
             © {currentYear} GoGestia. Todos los derechos reservados.
           </p>
+          <p className="text-sm text-gray-400">
+            Diseñado y Desarrollado por{' '}
+            <a
+              href="https://www.alexalvarez.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-agency-dark transition-colors"
+            >
+              alexalvarez.dev
+            </a>
+          </p>
           <div className="flex space-x-6">
             <a
               href="https://www.linkedin.com/company/gogestia"
