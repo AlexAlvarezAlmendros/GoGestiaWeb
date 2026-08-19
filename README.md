@@ -1,200 +1,98 @@
-# GoGenAI Web
+<div align="center">
 
-Web Landing de la empresa GoGenAI - Soluciones de automatización y digitalización empresarial.
+# GoGestia · web
 
-## 🚀 Tecnologías
+**La landing de una consultora de automatización que, en vez de contarte lo que hace, te lo enseña funcionando en la propia página.**
 
-- **Frontend**: React 18 + JavaScript
-- **Build Tool**: Vite + SWC
-- **Styling**: Tailwind CSS
-- **Routing**: React Router v6
-- **HTTP Client**: Axios
+[![En producción](https://img.shields.io/badge/en%20producci%C3%B3n-gogestia.vercel.app-4dd4ac)](https://gogestia.vercel.app)
+[![React 19](https://img.shields.io/badge/React-19-61dafb)](package.json)
+[![Vite + SWC](https://img.shields.io/badge/Vite-SWC-646cff)](vite.config.js)
+[![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8)](tailwind.config.js)
 
-## 📋 Características
+[Qué es](#qué-es) ·
+[Las demos](#las-demos-son-el-argumento) ·
+[Arrancarlo](#arrancarlo) ·
+[Cómo está montado](#cómo-está-montado)
 
-### ✅ Completado - Setup Inicial
-- ✅ Proyecto creado con Vite + React + SWC + Javascript
-- ✅ Dependencias instaladas: `react-router-dom`, `axios`
-- ✅ Estructura de carpetas configurada
-- ✅ Prettier configurado para formateo de código
-
-### ✅ Completado - Configuración Base
-- ✅ React Router v6 configurado con todas las rutas
-- ✅ Layout base (MainLayout.jsx)
-- ✅ Sistema de estilos con Tailwind CSS
-- ✅ Variables de entorno configuradas
-- ✅ Componente de loading global
-
-### ✅ Completado - Componentes Reutilizables
-- ✅ Header con navegación responsive
-- ✅ Footer con enlaces y redes sociales
-- ✅ Botón CTA reutilizable
-- ✅ Componente Input con validación
-- ✅ Card para servicios
-- ✅ Modal/Expandible para detalles
-
-### ✅ Completado - Páginas
-- ✅ **Página Home**: Hero, propuesta de valor, servicios, casos de uso, proceso, resultados, CTA
-- ✅ **Página Servicios**: Layout de cards, modales con detalles, servicios futuros
-- ✅ **Página Contacto**: Formulario completo, validación, integración con backend
-- ✅ **Página Agradecimiento**: Mensaje personalizado, próximos pasos, CTAs secundarios
-- ✅ **Página Blog**: Lista de artículos, newsletter, categorías
-- ✅ **Páginas Legales**: Política de privacidad, aviso legal, política de cookies
-
-### ✅ Completado - Servicios
-- ✅ ContactService para gestión de formularios
-- ✅ Validación de formularios en cliente
-- ✅ Hook de Loading global
-
-## 📁 Estructura del Proyecto
-
-```
-├── public/
-├── src/
-│   ├── components/          # Componentes reutilizables
-│   │   ├── Button.jsx
-│   │   ├── Card.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   ├── Input.jsx
-│   │   ├── LegalPage.jsx
-│   │   └── Modal.jsx
-│   ├── hooks/              # Custom hooks
-│   │   └── LoadingProvider.jsx
-│   ├── layouts/            # Layouts de página
-│   │   └── MainLayout.jsx
-│   ├── pages/              # Páginas principales
-│   │   ├── legal/          # Páginas legales
-│   │   │   ├── CookiePolicy.jsx
-│   │   │   ├── LegalNotice.jsx
-│   │   │   └── PrivacyPolicy.jsx
-│   │   ├── Blog.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Home.jsx
-│   │   ├── Services.jsx
-│   │   └── Thanks.jsx
-│   ├── services/           # Servicios y API calls
-│   │   └── contactService.js
-│   ├── tests/             # Tests (pendiente)
-│   ├── App.jsx            # Componente raíz
-│   ├── index.css          # Estilos globales con Tailwind
-│   └── main.jsx           # Punto de entrada
-├── .env                   # Variables de entorno
-├── .env.example          # Ejemplo de variables de entorno
-├── .prettierrc           # Configuración de Prettier
-├── postcss.config.js     # Configuración de PostCSS
-├── tailwind.config.js    # Configuración de Tailwind
-└── vite.config.js        # Configuración de Vite
-```
-
-## 🎨 Paleta de Colores (Marca GoGenAI)
-
-- **Verde Oscuro**: `#093A29` - Color principal de marca
-- **Verde Lima**: `#C7F464` - Color de acento y CTAs
-- **Blanco**: `#FFFFFF` - Fondo principal
-- **Gris Claro**: `#EAEAEA` - Fondos secundarios
-- **Negro**: `#000000` - Texto principal
-
-## 🚦 Rutas Disponibles
-
-- `/` - Página de inicio
-- `/servicios` - Página de servicios
-- `/contacto` - Formulario de contacto
-- `/gracias` - Página de agradecimiento post-formulario
-- `/blog` - Blog y recursos
-- `/legal/privacidad` - Política de privacidad
-- `/legal/aviso-legal` - Aviso legal
-- `/legal/cookies` - Política de cookies
-
-## ⚡ Comandos Disponibles
-
-```bash
-# Desarrollo
-npm run dev                 # Inicia servidor de desarrollo
-
-# Build
-npm run build              # Construye para producción
-npm run preview            # Preview del build de producción
-
-# Linting y formato
-npm run lint               # Ejecuta ESLint
-npm run lint:fix           # Ejecuta ESLint y arregla errores automáticamente
-npm run format             # Formatea código con Prettier
-npm run format:check       # Verifica formato del código
-```
-
-## 🔧 Configuración de Desarrollo
-
-### Variables de Entorno
-
-Crea un archivo `.env` basado en `.env.example`:
-
-```env
-VITE_API_URL=http://localhost:3001
-VITE_SITE_NAME=GoGenAI
-VITE_CONTACT_EMAIL=contacto@gogenaiweb.com
-```
-
-### Desarrollo Local
-
-1. **Instalar dependencias**:
-   ```bash
-   npm install
-   ```
-
-2. **Iniciar servidor de desarrollo**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Abrir navegador**: El sitio estará disponible en `http://localhost:5173`
-
-## 📦 Dependencias Principales
-
-### Dependencias de Producción
-- `react` - Librería principal de UI
-- `react-dom` - Renderizado en DOM
-- `react-router-dom` - Enrutamiento
-- `axios` - Cliente HTTP
-
-### Dependencias de Desarrollo
-- `@vitejs/plugin-react-swc` - Plugin de React para Vite con SWC
-- `tailwindcss` - Framework de CSS
-- `autoprefixer` - PostCSS plugin para prefijos CSS
-- `prettier` - Formateador de código
-- `eslint` - Linter de JavaScript
-
-## 🌐 Integración Backend
-
-El proyecto está preparado para integrarse con un backend para:
-- Envío de formularios de contacto
-- Suscripción al newsletter
-- Gestión de contenido del blog (futuro)
-
-La configuración del backend se realiza a través de la variable `VITE_API_URL`.
-
-## 📱 Responsive Design
-
-- **Mobile First**: Diseñado primero para móviles
-- **Breakpoints**: Utiliza el sistema estándar de Tailwind CSS
-- **Navegación móvil**: Menú hamburguesa implementado
-- **Formularios**: Optimizados para dispositivos táctiles
-
-## 🔒 Cumplimiento Legal
-
-- **RGPD**: Políticas de privacidad implementadas
-- **LSSI**: Aviso legal completo
-- **Cookies**: Política de cookies detallada
-- **Consentimientos**: Formularios con checkboxes de aceptación
-
-## 👥 Contribución
-
-Este proyecto sigue las especificaciones funcionales definidas en la documentación del negocio GoGenAI.
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo GNU General Public License v3.0 - ver el archivo [LICENSE](LICENSE) para más detalles.
+</div>
 
 ---
 
-**GoGenAI** - Automatizando el futuro de tu empresa 🚀
+## Qué es
+
+El sitio público de **GoGestia**: automatización de procesos con IA para pymes. Cinco servicios
+—automatización con IA, aplicaciones internas, portales de cliente, integraciones entre CRM/ERP y
+agentes de IA ejecutándose en local—, un proceso de trabajo en cuatro pasos y una única llamada a
+la acción: **el diagnóstico gratuito**.
+
+Todo el sitio existe para llevar a ese formulario. Por eso no hay carrusel de logos ni blog activo
+en la navegación: se probó, no aportaba, y se quitó.
+
+## Las demos son el argumento
+
+Vender automatización con capturas de pantalla no funciona: el cliente no distingue un dashboard de
+otro. Así que cada servicio trae una **demo interactiva embebida en la página**, y se toca:
+
+| Demo | Qué enseña |
+|---|---|
+| `ClientPortalDemo` | Cómo ve el cliente final su portal |
+| `DocumentProcessorDemo` | Una factura entrando y saliendo como datos |
+| `StockControlDemo` | Control de stock con avisos automáticos |
+| `APIIntegrationDemo` | Dos sistemas dejando de duplicar datos |
+| `LocalAIAgentDemo` | Un agente respondiendo con el modelo en tu máquina |
+
+La de agentes locales es la que más se defiende sola: **datos que no salen de la empresa y sin
+cuota por token**, que es exactamente la objeción que aparece en cuanto dices «IA» delante de un
+gerente.
+
+## Arrancarlo
+
+```bash
+npm install
+npm run dev          # http://localhost:5173
+
+npm run lint         # ESLint 9 (flat config)
+npm run format       # Prettier
+npm run build        # bundle de producción en dist/
+```
+
+Variables de entorno (todas opcionales, con valores por defecto en `src/config/contact.js`):
+
+```env
+VITE_API_URL=            # backend del formulario de contacto (GoGestiaAPI)
+VITE_SITE_URL=           # URL canónica, para el SEO
+VITE_CONTACT_EMAIL=
+VITE_CONTACT_PHONE=
+```
+
+## Cómo está montado
+
+```
+src/
+  pages/        Home · Services · Contact · Thanks · legal/ · NotFound
+  components/   Header · Footer · Card · Modal · Input · Button · SEOHead
+    demos/      las cinco demos interactivas
+  services/     contactService.js — envío del formulario al backend
+  config/       contact.js — teléfono, email, horarios y compromisos de respuesta
+  hooks/        loading global y SEO por página
+```
+
+- **SEO por página** con `react-helmet-async` a través de `SEOHead`, no metadatos globales
+  copiados en el `index.html`.
+- **Datos de contacto en un solo sitio** (`src/config/contact.js`): cambiar el teléfono es una
+  línea, no un `grep` por todo el repo.
+- **Páginas legales** (privacidad, aviso legal, cookies) servidas por un componente común
+  `LegalPage`, porque el texto cambia y el maquetado no.
+- Analítica con **Vercel Web Analytics**; despliegue en **Vercel** (`vercel.json`), con
+  `netlify.toml` heredado de un despliegue anterior.
+
+## Estado
+
+**En producción.** El formulario de contacto habla con [GoGestiaAPI](https://github.com/AlexAlvarezAlmendros/GoGestiaAPI);
+el blog está implementado en el código pero fuera de la navegación (ver `BLOG_README.md`) a la
+espera de tener artículos que justifiquen la sección.
+
+## Licencia
+
+Sin fichero de licencia: es el sitio corporativo de una empresa concreta, no una plantilla.
+Todos los derechos reservados.
